@@ -1,0 +1,23 @@
+{
+  "name": "my-repositories",
+  "version": "1.0.0",
+  "description": "",
+  "main": "viewRepositories.js",
+  "scripts": {
+    "deploy": "sls deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/barbararech/my-repositories.git"
+  },
+  "keywords": [],
+  "author": "Bárbara Rech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/barbararech/my-repositories/issues"
+  },
+  "homepage": "https://bitbucket.org/barbararech/my-repositories#readme",
+  "dependencies": {
+    "octokit": "^2.0.10"
+  }
+}
