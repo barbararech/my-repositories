@@ -1,7 +1,7 @@
 "use strict";
-const { Octokit, App } = require("octokit");
+const { Octokit } = require("octokit");
 
-module.exports.handle = async (event, context) => {
+module.exports.handle = async () => {
   const octokit = new Octokit({});
 
   try {
@@ -11,7 +11,13 @@ module.exports.handle = async (event, context) => {
 
     const processedData = processRepositoriesData(data);
 
-    return { statusCode: 200, body: JSON.stringify(processedData) };
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        owner: "Bárbara Rech",
+        repositories: processedData,
+      }),
+    };
   } catch (error) {
     return error;
   }
@@ -20,9 +26,9 @@ module.exports.handle = async (event, context) => {
 function processRepositoriesData(data) {
   return data.map((repository) => {
     return {
-      nome: repository.name,
-      descrição: repository.description,
-      dataDeCriação: repository.created_at,
+      name: repository.name,
+      description: repository.description,
+      created_at: repository.created_at,
     };
   });
 }
