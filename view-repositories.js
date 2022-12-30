@@ -8,7 +8,13 @@ export default async function handle() {
       owner: 'barbararech',
     });
 
-    const processedData = processRepositoriesData(data);
+    const processedData = data.map(({name, description, created_at}) => {
+      return {
+        name,
+        description,
+        created_at,
+      };
+    });
 
     return {
       statusCode: 200,
@@ -21,14 +27,4 @@ export default async function handle() {
   } catch (error) {
     return error;
   }
-}
-
-function processRepositoriesData(data) {
-  return data.map((repository) => {
-    return {
-      name: repository.name,
-      description: repository.description,
-      created_at: repository.created_at,
-    };
-  });
 }

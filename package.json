@@ -33,6 +33,9 @@
     "root": true,
     "parserOptions": {
       "sourceType": "module"
+    },
+  "rules": {
+    "camelcase": "off"
   }
   }
 }
