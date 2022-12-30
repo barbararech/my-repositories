@@ -1,5 +1,4 @@
 "use strict";
-
 const { Octokit, App } = require("octokit");
 
 module.exports.handle = async (event, context) => {
@@ -10,8 +9,20 @@ module.exports.handle = async (event, context) => {
       owner: "barbararech",
     });
 
-    return { statusCode: 200, body: JSON.stringify(data) };
+    const processedData = processRepositoriesData(data);
+
+    return { statusCode: 200, body: JSON.stringify(processedData) };
   } catch (error) {
     return error;
   }
 };
+
+function processRepositoriesData(data) {
+  return data.map((repository) => {
+    return {
+      nome: repository.name,
+      descrição: repository.description,
+      dataDeCriação: repository.created_at,
+    };
+  });
+}

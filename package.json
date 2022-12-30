@@ -1,7 +1,7 @@
 {
   "name": "my-repositories",
   "version": "1.0.0",
-  "description": "",
+  "description": "An app to view all my GitHub repositories.",
   "main": "viewRepositories.js",
   "scripts": {
     "deploy": "sls deploy"
