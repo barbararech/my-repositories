@@ -1,7 +1,6 @@
-"use strict";
-const { Octokit } = require("octokit");
+import { Octokit } from "octokit";
 
-module.exports.handle = async () => {
+export async function handle() {
   const octokit = new Octokit({});
 
   try {
@@ -22,7 +21,7 @@ module.exports.handle = async () => {
   } catch (error) {
     return error;
   }
-};
+}
 
 function processRepositoriesData(data) {
   return data.map((repository) => {

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An app to view all my GitHub repositories.",
   "main": "viewRepositories.js",
+  "type":"module",
   "scripts": {
     "deploy": "sls deploy"
   },
