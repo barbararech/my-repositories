@@ -14,7 +14,8 @@ module.exports.handle = async () => {
     return {
       statusCode: 200,
       body: JSON.stringify({
-        owner: "Bárbara Rech",
+        owner: data[0].owner.login,
+        profile_url: data[0].owner.html_url,
         repositories: processedData,
       }),
     };
