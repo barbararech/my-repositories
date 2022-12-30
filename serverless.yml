@@ -24,6 +24,8 @@ provider:
   name: aws
   runtime: nodejs16.x
   region: sa-east-1
+  httpApi:
+    cors: true
 
 # you can overwrite defaults here
 #  stage: dev
@@ -66,10 +68,9 @@ functions:
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
     events:
-      - httpApi: 'GET /repositories/barbararech'
-          # path: /repositories/barbararech
-          # method: get
-          # cors: true
+      - httpApi:
+          path: /repositories/barbararech
+          method: GET
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
