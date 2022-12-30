@@ -10,7 +10,7 @@ provider:
 
 functions:
   view-repositories:
-    handler: view-repositories.handle
+    handler: view-repositories.default
     events:
       - httpApi:
           path: /repositories/barbararech
@@ -18,3 +18,4 @@ functions:
 #    Define function environment variables here
 #    environment:
 #      variable2: value2
+

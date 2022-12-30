@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An app to view all my GitHub repositories.",
   "main": "viewRepositories.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "deploy": "sls deploy"
   },
@@ -19,6 +19,20 @@
   },
   "homepage": "https://bitbucket.org/barbararech/my-repositories#readme",
   "dependencies": {
-    "octokit": "^2.0.10"
+    "octokit": "^2.0.10",
+    "@serverless/eslint-config": "^5.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.30.0",
+    "eslint-plugin-import": "^2.26.0",
+    "git-list-updated": "^1.2.1",
+    "prettier": "^2.8.1"
+  },
+  "eslintConfig": {
+    "extends": "@serverless/eslint-config/node",
+    "root": true,
+    "parserOptions": {
+      "sourceType": "module"
+  }
   }
 }

@@ -1,11 +1,11 @@
-import { Octokit } from "octokit";
+import { Octokit } from 'octokit';
 
-export async function handle() {
+export default async function handle() {
   const octokit = new Octokit({});
 
   try {
-    const { data } = await octokit.request("GET /users/{owner}/repos", {
-      owner: "barbararech",
+    const { data } = await octokit.request('GET /users/{owner}/repos', {
+      owner: 'barbararech',
     });
 
     const processedData = processRepositoriesData(data);
