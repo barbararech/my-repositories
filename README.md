@@ -21,7 +21,7 @@ npm install
 Run the following command to install the dev dependencies.
 
 ```
-npm install eslint eslint-plugin-import git-list-updated prettier
+npm install -D eslint eslint-plugin-import git-list-updated prettier 
 ```
 Configure your AWS  credentials
 
